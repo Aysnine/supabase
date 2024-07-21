@@ -247,7 +247,7 @@ Create a `middleware.js` file at the project root and another one within the `ut
 ```jsx middleware.js
 import { updateSession } from '@/utils/supabase/middleware'
 
-export async function middleware(request) {
+export default async function middleware(request) {
   // update user's auth session
   return await updateSession(request)
 }
@@ -317,7 +317,7 @@ Create a `middleware.ts` file at the project root and another one within the `ut
 import { type NextRequest } from 'next/server'
 import { updateSession } from '@/utils/supabase/middleware'
 
-export async function middleware(request: NextRequest) {
+export default async function middleware(request: NextRequest) {
   // update user's auth session
   return await updateSession(request)
 }
